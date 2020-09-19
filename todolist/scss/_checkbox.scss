@@ -1,0 +1,70 @@
+%check{
+    width: 20px;
+    height: 20px;
+    outline: none;//去除选中边框
+    appearance: none;
+    position: relative;
+}
+%check-before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid #111;
+    display: inline-block;
+    vertical-align: middle;
+}
+%checked-before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid #111;
+    // background:$radio-color;
+    display: inline-block;
+    vertical-align: middle;
+}
+%checked-after{
+    content: '';
+    width: 10px;
+    height:5px;
+    border: 2px solid #111;
+    border-top: transparent;
+    border-right: transparent;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 6px;
+    left:5px;
+    transform: rotate(-45deg);
+}
+
+.selAll{
+    @extend %check;
+}
+.selAll:before{
+    @extend %check-before;
+    border-radius: 50%;
+}
+.selAll:checked:before{
+   @extend %checked-before;
+   border-radius: 50%;
+}
+.selAll:checked:after{
+    @extend %checked-after;
+}
+
+
+.select{
+    @extend %check;
+}
+.select:before{
+    @extend %check-before;
+    border-radius: 5px;
+}
+.select:checked:before{
+   @extend %checked-before;
+   border-radius: 5px;
+}
+.select:checked:after{
+    @extend %checked-after;
+}
+

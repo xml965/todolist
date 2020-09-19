@@ -1,0 +1,32 @@
+.night{
+    @include set-background($dark-color);
+    margin: -20px;
+    padding: 20px;
+    height: 100vh;
+    input{
+        @extend %check;
+    }
+    input:before{
+        @extend %check-before;
+        border-color: white;
+    }
+    input:checked:before{
+       @extend %checked-before;
+       border-color: white;
+    }
+    input:checked:after{
+        @extend %checked-after;
+        border-color: white;
+    }
+
+    .completed{
+        color: #444;
+        label{
+            text-decoration: line-through;
+        }
+    }
+    
+}
+#mode{
+    float: right;
+}

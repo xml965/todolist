@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>V便签</title>
+    <script src="./vue.js"></script>
+    <script src="./js/axios.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+
+
+<body>
+    <div id="app" v-bloak>
+        <div :class="{night:mode}">
+            <header>
+                <img id="mode" src="./img/night.png" @click="day_night"/>
+                <h1>{{title}}</h1>
+                <input id="inp_content" placeholder="to do what?" v-model="inp_data" @keyup.enter="add" autofocus />
+            </header>
+    
+            <section>
+                <div>
+                    <div class="selAlldiv">全选：<input class="selAll" type="checkbox" @click="selAll" v-model="ched" /></div>
+                    <button @click="clear">clear completed</button>
+                </div>
+                <ul>
+                    <li :class="{completed:val.status}" v-for="(val,key) in todoData">
+                        <input class="select" type="checkbox" v-model="val.status" />
+                        <label>{{val.inp_content}}</label>
+                        <button @click="del(key)">del</button>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</body>
+<script src="./js/app.js"></script>
+
+</html>

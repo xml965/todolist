@@ -1,0 +1,46 @@
+@import '_config';
+@import '_utilities';
+@import '_list';
+@import '_mode';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+[v-bloak]{
+    display: none;
+}
+body{
+    font-family: $font-stack;
+    line-height: 1.6;
+    @include set-background($light-color);
+}
+
+#app{  
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+
+    header{
+        text-align: center;
+        img{
+            width: 30px;
+            height: 30px;
+        }
+        h1{
+            margin: 20px;
+        }
+        input{
+            margin-top: 40px;
+            padding:0 10px;
+            width: 400px;
+            height: 45px;
+            border-radius: 5px 5px;
+            border: 0;
+            font-size: 15px;
+        }
+    }
+}
+
+
+

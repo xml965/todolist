@@ -1,0 +1,24 @@
+$light-color:#e0ffff;
+$dark-color:#007;
+$font-stack:Arial, Helvetica, sans-serif;
+$clear-color:#0aa;
+$del-color:#f33;
+$radio-color:#0c8;
+$black-color:black;
+$white-color:white;
+$light-green:aquamarine;
+
+//根据背景颜色变化来设置字体颜色
+@function set-text-color($color){
+    @if(lightness($color) > 70){
+        @return $black-color;
+    }@else{
+        @return $white-color;
+    }
+}
+
+//混合背景色和字体色
+@mixin set-background($color){
+    background-color: $color;
+    color: set-text-color($color);
+}
